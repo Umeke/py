@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Template</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+
+        <img src="{{ url_for('static', filename='images/44.jpg') }}" alt="Sample Image" style="width: 70px; height: 70px;">
+
+    </header>
+    <div class="container">
+        <aside class="left-sidebar">
+            <nav>
+                <h2>Главное меню сайта</h2>
+                <ul>
+                   <body>
+                    <div class="menu">
+                        <a href="#section1">Бізбен байланыс</a>
+                        <a href="#section2">Section 2</a>
+                        <a href="#section3">Section 3</a>
+                        <!-- Add more menu items as needed -->
+                    </div>
+
+
+
+
+                    <div id="section2" class="section">
+                        <h2>Section 2</h2>
+                        <p>This is the content of Section 2.</p>
+                    </div>
+
+                    <div id="section3" class="section">
+                        <h2>Section 3</h2>
+                        <p>This is the content of Section 3.</p>
+                    </div>
+
+                    <!-- Add more sections as needed -->
+
+                </body>
+                </ul>
+            </nav>
+            <div class="auth">
+
+
+
+                <h2>Вход регистрация</h2>
+
+                <form action="{{ url_for('login') }}" method="POST">
+                    <input type="text" name="username" placeholder="Логин">
+                    <input type="password"  name="password" placeholder="Пароль">
+                    <button type="submit">Войти</button>
+                </form>
+            </div>
+            <div class="banners">
+
+                <img src="{{ url_for('static', filename='images/17.jpg') }}" alt="Sample Image" style="width: 300px; height: 200px;">
+                <p> Youtube</p>
+                <a href="https://www.youtube.com/watch?v=87EUz0sVLT0&list=PLTpqPwj6khLDWfEY2ggI-IZoeKVRkMZbl">qwe</a>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </aside>
+        <main>
+
+            <h1> 2024 Хакатон</h1>
+            <a></a>
+            <h2>🌟 “Үздік IT Ұстаз” турнирінің қорытынды кезеңін жіберіп алмаңыз!
+⠀
+<br>📍Турнир Қазақстанның 11 өңірінде оффлайн форматта өтуде!</br>
+<br>Контест мекен-жайларына сілтемелер және қатысушылар тізімі осы сілтеме арқылы қол жетімді.</br>
+<br>Күні: 24.05.2024
+Уақыты: 13:00</br>
+<br>Қорытынды кезеңнің кестесі:</br>
+<br>13: 00 - 13: 30: Кабинеттер бойынша тіркеу және отыру</br>
+<br>13: 30 - 14: 00: Логин-парольдерді тексеру</br>
+<br>14:00 - 16: 00: Контест</br>
+<br>16:30 - 16: 50: Марапаттау</br>
+<br>Қатысушыларымызға-информатика мұғалімдеріне сәттілік тілейміз! 🍀</br>
+</h2>
+            <img src="{{ url_for('static', filename='images/uzdik.jpg') }}" alt="Sample Image" style="width: 500px; height: 300px;">
+
+
+
+
+        </main>
+        <aside class="right-sidebar">
+            <div class="news">
+                <h2>Новости</h2>
+                <img src="{{ url_for('static', filename='images/6.jpg') }}" alt="Sample Image" style="width: 300px; height: 200px;">
+                <h1><a href="/news1">27 мая 2024 года Учебно-методическим центром развития образования Карагандинской области проводится Образовательный Хакатон «DIGITAL TEACHER -2024» ...</a></h1>
+            </div>
+            <div class="calendar">
+
+                <head>
+                    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=-1">
+    <title>Interactive Calendar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .calendar-container {
+            display: flex;
+            justify-content: flex-start;
+            margin: 2px;
+        }
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+        }
+        .calendar div {
+            border: 1px solid #ccc;
+            padding: 1px;
+            text-align: center;
+        }
+        .header {
+            font-weight: bold;
+            background-color: #f0f0f0;
+        }
+        .today {
+            background-color: #ffeb3b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calendar-container">
+        <div id="calendar" class="calendar"></div>
+    </div>
+
+    <script>
+        function createCalendar(year, month) {
+            const calendarDiv = document.getElementById('calendar');
+            calendarDiv.innerHTML = '';
+
+            const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            daysOfWeek.forEach(day => {
+                const dayDiv = document.createElement('div');
+                dayDiv.classList.add('header');
+                dayDiv.textContent = day;
+                calendarDiv.appendChild(dayDiv);
+            });
+
+            const firstDay = new Date(year, month).getDay();
+            const lastDate = new Date(year, month + 1, 0).getDate();
+
+            for (let i = 0; i < firstDay; i++) {
+                const emptyDiv = document.createElement('div');
+                calendarDiv.appendChild(emptyDiv);
+            }
+
+            for (let date = 1; date <= lastDate; date++) {
+                const dateDiv = document.createElement('div');
+                dateDiv.textContent = date;
+
+                const today = new Date();
+                if (date === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+                    dateDiv.classList.add('today');
+                }
+
+                calendarDiv.appendChild(dateDiv);
+            }
+        }
+
+        const today = new Date();
+        createCalendar(today.getFullYear(), today.getMonth());
+    </script>
+</body>
+<body>
+
+
+</body>
+
+            </div>
+            <div class="banners">
+
+                <img src="{{ url_for('static', filename='images/2.jpg') }}" alt="Sample Image" style="width: 300px; height: 200px;">
+                <p>youtube.</p>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div id="section1" class="section">
+                        <p>Контакты, социальные сети, контакты и т.д.</p>
+                        <p>телефон 8707 598 45 04</p>
+                    </div>
+
+    </footer>
+
+</body>
+</html>

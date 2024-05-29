@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f8f8f8;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header .top-menu {
+    font-size: 18px;
+}
+
+.container {
+    display: flex;
+}
+
+.left-sidebar, .right-sidebar {
+    width: 20%;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
+
+.left-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+main {
+    width: 60%;
+    padding: 10px;
+    background-color: #fff;
+}
+
+footer {
+    background-color: #f8f8f8;
+    padding: 10px;
+    text-align: center;
+}
+
+aside h2, main h1, footer p {
+    margin-top: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: green; /* Applying green color */
+}
+
+.auth form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth form input, .auth form button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.banners p {
+    margin: 0;
+}
